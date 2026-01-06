@@ -105,18 +105,17 @@ public class Practice {
     
     int counter = 0;
     int theNum = 0;
-    int freqNum = 0;
     int position = 0;
 
-    int[] numbers;
-    int[] frequency;
+    int[] numbers = new int[nums.length];
+    int[] frequency = new int[nums.length];
 
-    for(num : nums)
+    for(int i = 0; i < nums.length; i++)
     {
-      num = theNum;
-      for(int i = 1; i < nums.length; i++)
+      nums[i] = theNum;
+      for(int j = 1; j < nums.length; j++)
       {
-        if(theNum == i)
+        if(theNum == j)
         {
           counter++;
         }
@@ -127,6 +126,7 @@ public class Practice {
       position++;
       counter = 0;
     }
+      
     return -1;
   }
 }
