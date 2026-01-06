@@ -105,20 +105,29 @@ public class Practice {
     
     int counter = 0;
     int theNum = 0;
-    int freqNum = 0;
     int position = 0;
 
-    int[] numbers;
-    int[] frequency;
+    int[] numbers = new int[nums.length];
+    int[] frequency = new int[nums.length];
 
-    for(num : nums)
+    for(int i = 0; i < nums.length; i++)
     {
-      num = theNum;
-      for(int i = 1; i < nums.length; i++)
-      {
-        if(theNum == i)
+      nums[i] = theNum;
+      int isUnique = 1;
+      for (int j = 0; j < numbers.length; j++) {
+        if (theNum == numbers[j]) {
+          isUnique = 0;
+          break;
+        }
+      }
+
+      if (isUnique == 1) {
+        for(int j = 0; j < nums.length; j++)
         {
-          counter++;
+          if(theNum == nums[j])
+          {
+            counter++;
+          }
         }
       }
 
@@ -127,6 +136,15 @@ public class Practice {
       position++;
       counter = 0;
     }
-    return -1;
+
+    int maxValue = 0;
+    int maxNum = -1;
+    for (int i = 0; i < frequency.length; i++) {
+      if (frequency[i] > maxValue) {
+        maxNum = numbers[i];
+      }
+    }
+    
+    return maxNum;
   }
 }
