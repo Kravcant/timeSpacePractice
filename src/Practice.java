@@ -59,8 +59,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: 
-   * Space Complexity: 
+   * Time Complexity: O(n)
+   * Space Complexity: O(1)
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
@@ -73,14 +73,16 @@ public class Practice {
       map.put(num, map.get(num) + 1);
     }
     
-    int max = 0;
+    int maxValues = 0;
+    int maxKey = -1;
     for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-      if (entry.getValue() > max) {
-        max = entry.getKey();
+      if (entry.getValue() > maxValues) {
+        maxKey = entry.getKey();
+        maxValues = entry.getValue();
       }
     }
     
-    return max;
+    return maxKey;
   }
 
   /**
