@@ -7,4 +7,12 @@ public class PracticeTest {
   // TODO: Implement tests for Practice.mostCommonTimeEfficient and Practice.mostCommonSpaceEfficient
 
   // Hints: They are static methods, so you will use the full Practice.mostCommonTimeEfficient for method calls
+
+  @Test
+  public void mostCommonTimeEfficientOneMax() {
+    int[] nums = {0,2,0,5,0,6,0,1,0,2};
+    int max = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(max, 0);
+  }
+
 }

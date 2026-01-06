@@ -66,9 +66,21 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonTimeEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(n) time. n = nums.size()
-    return -1;
+    // complete this method with an implementation that runs in O(n) time. n = nums.size()
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int num : nums) {
+      map.putIfAbsent(num, 0);
+      map.put(num, map.get(num) + 1);
+    }
+    
+    int max = 0;
+    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+      if (entry.getValue() > max) {
+        max = entry.getKey();
+      }
+    }
+    
+    return max;
   }
 
   /**
@@ -87,8 +99,32 @@ public class Practice {
    * @return the integer that shows up most commonly
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
-    // TODO: Complete this method with an implementation that runs
-    // in O(1) space.
+    // complete this method with an implementation that runs in 0(1) space.
+    
+    int counter = 0;
+    int theNum = 0;
+    int freqNum = 0;
+    int position = 0;
+
+    int[] numbers;
+    int[] frequency;
+
+    for(num : nums)
+    {
+      num = theNum;
+      for(int i = 1; i < nums.length; i++)
+      {
+        if(theNum == i)
+        {
+          counter++;
+        }
+      }
+
+      numbers[position] = theNum;
+      frequency[position] = counter;
+      position++;
+      counter = 0;
+    }
     return -1;
   }
 }
