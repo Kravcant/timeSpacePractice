@@ -6,7 +6,7 @@ import java.util.Map;
 public class Practice {
 
   // Time Complexity: O(n), n = array.length
-  // Space Complexity: O(1)
+  // Space Complexity: O(n), n = array.length
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
     for (int num : array) {
@@ -18,7 +18,7 @@ public class Practice {
   }
 
   // Time Complexity: O(n), n = matrix.length
-  // Space Complexity: O(1), 
+  // Space Complexity: O(1)
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
     for (int i = 0; i < matrix.length; i++) {
@@ -29,7 +29,7 @@ public class Practice {
   
 
   // Time Complexity: O(n), n = array.length
-  // Space Complexity: O(1)
+  // Space Complexity: O(n), n = array.length
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
@@ -41,7 +41,7 @@ public class Practice {
   }
 
   // Time Complexity: O(n), n = n
-  // Space Complexity: O(1)
+  // Space Complexity: O(n)
   public static List<Integer> evensToSquare(int n) {
     List<Integer> evens = new ArrayList<>();
     for(int i = 0; i <= n*n; i+=2) {
@@ -59,8 +59,8 @@ public class Practice {
    * 
    * Once you finish, WRITE TESTS FOR IT in PracticeTest.java
    * 
-   * Time Complexity: O(n)
-   * Space Complexity: O(1)
+   * Time Complexity: O(n), n = nums.length
+   * Space Complexity: O(n), n = nums.length
    * 
    * @param nums An array of integers
    * @return the integer that shows up most commonly
