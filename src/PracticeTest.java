@@ -15,9 +15,23 @@ public class PracticeTest {
   }
 
   @Test
+  public void mostCommonTimeEfficientMultiMax() {
+    int[] nums = {15,15,15,6,2,3,6,9,6};
+    int max = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(max, 15);
+  }
+
+  @Test
   public void mostCommonSpaceEfficientOneMax() {
     int[] nums = {0,2,0,5,0,6,0,1,0,2};
     int max = Practice.mostCommonSpaceEfficient(nums);
     assertEquals(max, 0);
+  }
+
+  @Test
+  public void mostCommonSpaceEfficientMultiMax() {
+    int[] nums = {10,10,10,25,2,3,25,9,25};
+    int max = Practice.mostCommonSpaceEfficient(nums);
+    assertEquals(max, 10);
   }
 }

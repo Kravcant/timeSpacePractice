@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,16 +74,20 @@ public class Practice {
       map.put(num, map.get(num) + 1);
     }
     
-    int maxValues = 0;
-    int maxKey = -1;
-    for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-      if (entry.getValue() > maxValues) {
-        maxKey = entry.getKey();
-        maxValues = entry.getValue();
+    int maxValue = 0;
+    for (int value : map.values()) {
+      if (value > maxValue) {
+        maxValue = value;
+      }
+    }
+
+    for (int num : nums) {
+      if (map.get(num) == maxValue) {
+        return num;
       }
     }
     
-    return maxKey;
+    return -1;
   }
 
   /**
@@ -102,49 +107,25 @@ public class Practice {
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
     // complete this method with an implementation that runs in 0(1) space.
-    
-    int counter = 0;
-    int theNum = 0;
-    int position = 0;
+    Arrays.sort(nums);
 
-    int[] numbers = new int[nums.length];
-    int[] frequency = new int[nums.length];
+    int maxValue = 1;
+    int count = 1;
+    int maxNum = nums[0];
 
-    for(int i = 0; i < nums.length; i++)
-    {
-      nums[i] = theNum;
-      int isUnique = 1;
-      for (int j = 0; j < numbers.length; j++) {
-        if (theNum == numbers[j]) {
-          isUnique = 0;
-          break;
-        }
+    for (int i = 1; i < nums.length; i++) {
+      if (nums[i] == nums [i - 1]) {
+        count++;
+      } else {
+        count = 1;
       }
 
-      if (isUnique == 1) {
-        for(int j = 0; j < nums.length; j++)
-        {
-          if(theNum == nums[j])
-          {
-            counter++;
-          }
-        }
-      }
-
-      numbers[position] = theNum;
-      frequency[position] = counter;
-      position++;
-      counter = 0;
-    }
-
-    int maxValue = 0;
-    int maxNum = -1;
-    for (int i = 0; i < frequency.length; i++) {
-      if (frequency[i] > maxValue) {
-        maxNum = numbers[i];
+      if (count > maxValue) {
+        maxValue = count;
+        maxNum = nums[i];
       }
     }
-    
+
     return maxNum;
   }
 }
