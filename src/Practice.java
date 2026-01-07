@@ -107,21 +107,20 @@ public class Practice {
    */
   public static int mostCommonSpaceEfficient(int[] nums) {
     // complete this method with an implementation that runs in 0(1) space.
-    Arrays.sort(nums);
-
-    int maxValue = 1;
-    int count = 1;
+    int maxCount = 0;
     int maxNum = nums[0];
 
-    for (int i = 1; i < nums.length; i++) {
-      if (nums[i] == nums [i - 1]) {
-        count++;
-      } else {
-        count = 1;
+    for (int i = 0; i < nums.length; i++) {
+      int count = 0;
+
+      for (int j = 0; j < nums.length; j++) {
+        if (nums[j] == nums[i]) {
+          count++;
+        }
       }
 
-      if (count > maxValue) {
-        maxValue = count;
+      if (count > maxCount) {
+        maxCount = count;
         maxNum = nums[i];
       }
     }

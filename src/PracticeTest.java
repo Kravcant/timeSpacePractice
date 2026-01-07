@@ -30,8 +30,8 @@ public class PracticeTest {
 
   @Test
   public void mostCommonSpaceEfficientMultiMax() {
-    int[] nums = {10,10,10,25,2,3,25,9,25};
+    int[] nums = {15,15,15,6,2,3,6,9,6};
     int max = Practice.mostCommonSpaceEfficient(nums);
-    assertEquals(max, 10);
+    assertEquals(max, 15);
   }
 }
